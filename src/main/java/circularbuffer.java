@@ -1,12 +1,19 @@
 public class circularbuffer {
-    private int size = 10;
-    private String[] buffer = new String[10];
+    private int size;
+    private final String[] buffer;
     private int writepointer;
     private int readpointer;
     private int readpointerbw = 1;
     public boolean isEmpty() {
         return true;
 
+    }
+    public circularbuffer(){
+        this(10);
+    }
+    public circularbuffer(int size1){
+        this.size = size1;
+        this.buffer = new String[size];
     }
 
     public void writeData(String input) {
